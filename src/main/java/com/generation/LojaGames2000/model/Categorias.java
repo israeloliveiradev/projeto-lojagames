@@ -2,6 +2,8 @@ package com.generation.LojaGames2000.model;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -16,6 +18,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table (name = "tb_categorias")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class Categorias {
 	
 	@Id
@@ -51,6 +54,8 @@ public class Categorias {
 
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
+		
+		
 	}
 	
 	

@@ -1,5 +1,7 @@
 package com.generation.LojaGames2000.model;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -14,6 +16,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table (name = "tb_produtos")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class Produto {
 	
 	
@@ -21,14 +24,7 @@ public class Produto {
 	@JsonIgnoreProperties("produto")
 	private Categorias categorias;
 	
-	public Categorias getCategorias() {
-		return categorias;
-	}
-
-	public void setCategorias(Categorias categorias) {
-		this.categorias = categorias;
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -96,7 +92,14 @@ public class Produto {
 	public void setClassificacao(String classificacao) {
 		this.classificacao = classificacao;
 	}
-	
+	public Categorias getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(Categorias categorias) {
+		this.categorias = categorias;
+	}
+
 	
 	
 	
