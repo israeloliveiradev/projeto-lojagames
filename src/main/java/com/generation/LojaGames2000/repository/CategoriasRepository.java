@@ -9,6 +9,6 @@ import com.generation.LojaGames2000.model.Categorias;
 
 public interface CategoriasRepository extends JpaRepository<Categorias, Long>{
 	
-	public List<Categorias> findAllByGeneroContaingIgnoreCase(@Param("genero") String genero);
+	public List<Categorias> findAllByGeneroContainingIgnoreCase(@Param("genero") String genero);
 
 }
