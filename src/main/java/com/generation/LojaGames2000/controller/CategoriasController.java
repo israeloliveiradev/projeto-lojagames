@@ -30,7 +30,7 @@ public class CategoriasController {
 	private CategoriasRepository categoriasRepository;
 
 	@GetMapping
-	public ResponseEntity<List<Categorias>> getAll() {
+	public ResponseEntity<List<Categorias>> getAll() {	
 		return ResponseEntity.ok(categoriasRepository.findAll());
 
 	}
@@ -69,3 +69,5 @@ public class CategoriasController {
 		categoriasRepository.deleteById(id);
 	}
 }
+
+
